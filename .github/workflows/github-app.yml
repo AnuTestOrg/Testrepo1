@@ -6,11 +6,11 @@ jobs:
   checkout:
     runs-on: ubuntu-latest
     steps:
-      - name:  checkout repo
-        uses:  actions/checkout@v2
-        with:
-          token:  ${{secrets.GITHUB_TOKEN}}
-          path:  AnuTestOrg/Testrepo1
+      # - name:  checkout repo
+      #   uses:  actions/checkout@v2
+      #   with:
+      #     token:  ${{secrets.GITHUB_TOKEN}}
+      #     path:  AnuTestOrg/Testrepo1
 
       - name:  checkout private repo
         uses:  actions/checkout@v2

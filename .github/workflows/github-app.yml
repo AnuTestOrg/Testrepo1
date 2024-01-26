@@ -11,4 +11,9 @@ jobs:
         with:
           token:  ${{secrets.GITHUB_TOKEN}}
           path:  AnuTestOrg/Testrepo1
+
+      - name:  checkout private repo
+        uses:  actions/checkout@v4
+        with:
+          path:  AnuTestOrg/Testrepo2
     

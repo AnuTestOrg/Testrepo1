@@ -15,5 +15,6 @@ jobs:
       - name:  checkout private repo
         uses:  actions/checkout@v4
         with:
+          token:  ${{secrets.GITHUB_TOKEN}}
           path:  AnuTestOrg/Testrepo2
     

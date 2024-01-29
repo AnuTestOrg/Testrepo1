@@ -43,4 +43,7 @@ jobs:
       # - uses: AnuTestOrg/Testrepo2@main
       #   with:
       #     github_token: ${{ steps.app-token.outputs.token }}
+
+      - name:  Show Contents
+        run:  ls -lR
     

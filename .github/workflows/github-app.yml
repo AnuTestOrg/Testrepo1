@@ -27,7 +27,7 @@ jobs:
         env:  
           TOKEN: ${{ steps.app-token.outputs.token }}
         run:  |
-          echo: "The generated token is masked: ${TOKEN}"
+          echo: 'The generated token is masked: ${TOKEN}'
         
       - name:  checkout private repo
         uses:  actions/checkout@v3

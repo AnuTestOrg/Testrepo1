@@ -1,0 +1,33 @@
+name:  Checkout Private repo using PAT token
+
+on:  
+  push:
+  workflow_dispatch:
+  
+jobs:
+  checkout:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+       
+    steps:
+      - name:  checkout repo
+        uses:  actions/checkout@v4
+        with:
+          token:  ${{secrets.GITHUB_TOKEN}}
+          repository:  AnuTestOrg/Testrepo1
+          
+      - name:  checkout private repo
+        uses:  actions/checkout@v3
+        with:
+          # token:  ${{ steps.app-token.outputs.token }}
+          repository:  AnuTestOrg/Testrepo2
+          path:  Testrepo2
+          token:  ${{secrets.GH_PAT}}
+          ref: 'main'
+          # Make sure the value of GITHUB_TOKEN will not be persisted in repo's config
+          persist-credentials: false
+
+      - name:  Show Contents
+        run:  ls -lR
+    

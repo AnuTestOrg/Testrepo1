@@ -1,7 +1,9 @@
 name:  Github App
 
-on:  [workflow_dispatch]
-
+on:  
+  # [workflow_dispatch]
+  push
+  
 jobs:
   checkout:
     runs-on: ubuntu-latest

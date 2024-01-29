@@ -1,7 +1,7 @@
 name:  Checkout Private repo using PAT token
 
 on:  
-  push:
+  # push:
   workflow_dispatch:
   
 jobs:

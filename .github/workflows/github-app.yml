@@ -1,7 +1,8 @@
 name:  Github App
 
 on:  
-  push
+  push:
+  workflow_dispatch:
   
 jobs:
   checkout:

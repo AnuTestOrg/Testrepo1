@@ -28,12 +28,12 @@ jobs:
         uses:  actions/checkout@v3
         with:
           token:  ${{steps.app-token.outputs.token}}
-          # repository:  AnuTestOrg/Testrepo2
+          repository:  AnuTestOrg/Testrepo2
           ref: 'main'
           # Make sure the value of GITHUB_TOKEN will not be persisted in repo's config
           persist-credentials: false
           
-      - uses: AnuTestOrg/Testrepo2@main
-        with:
-          github_token: ${{ steps.app-token.outputs.token }}
+      # - uses: AnuTestOrg/Testrepo2@main
+      #   with:
+      #     github_token: ${{ steps.app-token.outputs.token }}
     

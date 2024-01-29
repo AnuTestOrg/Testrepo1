@@ -7,8 +7,8 @@ on:
 jobs:
   checkout:
     runs-on: ubuntu-latest
-    # permissions:
-    #   contents: read
+    permissions:
+      contents: read
        
     steps:
       - name:  checkout repo

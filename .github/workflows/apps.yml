@@ -1,0 +1,29 @@
+name:  Github Apps Data
+
+on:
+  workflow_dispatch:
+    # inputs:
+    #   app:
+    #   description: 'Repository to register'
+    #   required: true
+
+jobs:
+  apps:
+    runs-on: ubuntu-latest
+    steps:
+    
+      - name:  Github App Token
+        uses:  actions/create-github-app-token@v1
+        id:  app-token
+        with:
+          app-id:  ${{vars.APP_ID}}
+          private-key:  ${{secrets.PRIVATE_KEY}}
+          # owner: ${{ github.repository_owner }} 
+          
+      - name: Rest Api
+        run: |
+          gh api  /installation/repositories
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+
+      

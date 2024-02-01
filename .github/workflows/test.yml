@@ -1,7 +1,7 @@
 name: list of apps
 
 on:
-  # push:
+  push:
   workflow_dispatch:
     # inputs:
     #   app:
@@ -25,7 +25,7 @@ jobs:
         run: |
           gh api  /orgs/AnuTestOrg/installations
         env:
-          GH_TOKEN: ${{secrets.APP_PAT}}
+          token: ${{secrets.APP_PAT}}
         # env:
         #   GH_TOKEN: ${{ steps.app-token.outputs.token }}
           

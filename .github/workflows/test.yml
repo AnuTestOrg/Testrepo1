@@ -24,10 +24,10 @@ jobs:
       - name: Rest Api
         run: |
           gh api /orgs/AnuTestOrg/installations
-        env:
-          GH_TOKEN: ${{secrets.APP_PAT}}
         # env:
-        #   GH_TOKEN: ${{ steps.app-token.outputs.token }}
+        #   GH_TOKEN: ${{secrets.APP_PAT}}
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
           
       # - name: Upload Artifact
       #   uses: actions/upload-artifact@v2

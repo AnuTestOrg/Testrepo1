@@ -23,7 +23,7 @@ jobs:
           
       - name: Rest Api
         run: |
-          echo "JSN=$(gh api  /installation/repositories)" >> app.csv
+          echo "JSN=$(gh api  /installation/repositories)" >> app.json
         env:
           GH_TOKEN: ${{ steps.app-token.outputs.token }}
           
@@ -31,5 +31,5 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: GitHub Apps data
-          path: app.csv
+          path: app.json
           if-no-files-found: error

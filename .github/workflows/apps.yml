@@ -23,7 +23,7 @@ jobs:
           
       - name: Rest Api
         run: |
-          echo "JSN=$(gh api  /installation/repositories)" >> app.json
+          echo "$(gh api  /installation/repositories)" >> app.json
         env:
           GH_TOKEN: ${{ steps.app-token.outputs.token }}
           

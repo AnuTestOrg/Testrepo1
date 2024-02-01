@@ -13,19 +13,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     
-      - name:  Github App Token
-        uses:  actions/create-github-app-token@v1
-        id:  app-token
-        with:
-          app-id:  ${{vars.APP_ID}}
-          private-key:  ${{secrets.PRIVATE_KEY}}
-          owner: ${{ github.repository_owner }} 
+      # - name:  Github App Token
+      #   uses:  actions/create-github-app-token@v1
+      #   id:  app-token
+      #   with:
+      #     app-id:  ${{vars.APP_ID}}
+      #     private-key:  ${{secrets.PRIVATE_KEY}}
+      #     owner: ${{ github.repository_owner }} 
           
       - name: Rest Api
         run: |
           echo "$(gh api  /orgs/AnuTestOrg/installations)" >> app.json
-        env:
-          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+        # env:
+        #   GH_TOKEN: ${{ steps.app-token.outputs.token }}
           
       - name: Upload Artifact
         uses: actions/upload-artifact@v2

@@ -23,13 +23,13 @@ jobs:
           
       - name: Rest Api
         run: |
-          gh api  /installation/repositories
+          echo "JSN=$(gh api  /installation/repositories)" >> $GITHUB_ENV
         env:
           GH_TOKEN: ${{ steps.app-token.outputs.token }}
           
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: GitHub Apps data
-          # path: ${{ env.artifacts-path }}/*.csv
-          if-no-files-found: error
+      # - name: Upload Artifact
+      #   uses: actions/upload-artifact@v2
+      #   with:
+      #     name: GitHub Apps data
+      #     path: ${{ env.artifacts-path }}/*.csv
+      #     if-no-files-found: error

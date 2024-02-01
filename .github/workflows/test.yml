@@ -1,7 +1,7 @@
 name: list of apps
 
 on:
-  push:
+  # push:
   workflow_dispatch:
     # inputs:
     #   app:
@@ -23,13 +23,15 @@ jobs:
           
       - name: Rest Api
         run: |
-          echo "$(gh api  /orgs/AnuTestOrg/installations)" >> app.json
+          gh api  /orgs/AnuTestOrg/installations
+        env:
+          GH_TOKEN: ${{secrets.APP_PAT}}
         # env:
         #   GH_TOKEN: ${{ steps.app-token.outputs.token }}
           
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: GitHub Apps data
-          path: app.json
-          if-no-files-found: error
+      # - name: Upload Artifact
+      #   uses: actions/upload-artifact@v2
+      #   with:
+      #     name: GitHub Apps data
+      #     path: app.json
+      #     if-no-files-found: error

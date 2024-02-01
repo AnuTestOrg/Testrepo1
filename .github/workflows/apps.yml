@@ -31,5 +31,5 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: GitHub Apps data
-          path: ${{ env.artifacts-path }}/*.csv
+          # path: ${{ env.artifacts-path }}/*.csv
           if-no-files-found: error

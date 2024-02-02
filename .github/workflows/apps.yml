@@ -23,7 +23,7 @@ jobs:
           
       - name: Rest Api
         run: |
-          echo "$(gh api  /installation/repositories | -jq -rc '[.repositories[] | {name: .name}]')" >> app.json
+          echo "$(gh api  /installation/repositories | jq -rc '[.repositories[] | {name: .name}]')" >> app.json
         env:
           GH_TOKEN: ${{ steps.app-token.outputs.token }}
           
